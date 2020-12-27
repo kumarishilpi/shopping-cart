@@ -1,0 +1,150 @@
+
+p {
+  margin: 0 0 10px;
+}
+.card{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  margin: 15px;
+  padding: 15px;
+  border-bottom: 1px solid darkgray;
+}
+.content{
+ width: 50%;
+  margin: 25px 0px;
+  padding: 10px
+}
+.content h3{
+  font-size: 20px;
+  color: green;
+}
+.image{
+  /*width: 35%;*/
+  vertical-align: middle;
+  margin: 25px;
+  padding: 10px;
+
+}
+.image img{
+  width: 150px;
+  height: auto;
+
+}
+.footer{
+  background: violet;
+}
+.footer p{
+  display: inline-block;
+  padding: 5px;
+}
+.footer button{
+  display: inline-block;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity:0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+.modalDialog:target {
+  opacity:1;
+  pointer-events: auto;
+}
+.modalDialog > div {
+  max-width: 650px;
+  width: 90%;
+  position: relative;
+  margin: 10% auto;
+  border-radius: 3px;
+  background: #fff;
+}
+.close {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f26d7d;
+  color: #fff;
+  line-height: 25px;
+  position: absolute;
+  right: -12px;
+  text-align: center;
+  top: -10px;
+  width: 34px;
+  height: 34px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: 1px 1px 3px #000;
+  padding-top: 5px;
+}
+.close:hover {
+  background: #fa3f6f;
+}
+.success{
+  text-align: center;
+  background: #1ab394;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.success img{
+  height: 50px;
+  width: 50px;
+}
+.cheers{
+  text-align: center;
+  color: #1ab394;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+     margin: 0px;
+     padding: 0px;
+    border-bottom: 1px solid darkgray;
+  }
+  .image {
+    width: 35%;
+    vertical-align: middle;
+    margin: 55px 25px 0px 0px;
+    padding: 0px;
+  }
+  .buttonincrement {
+    margin: 5px 0px 0px 5px;
+    background: #00800094;
+    border-radius: 50px;
+    width: auto;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px;
+    border: none;
+  }
+  .zerostate {
+    border: none;
+    width: 25%;
+    text-align: center;
+    font-size: 18px;
+  }
+}
