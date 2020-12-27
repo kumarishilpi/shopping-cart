@@ -39,7 +39,7 @@ class Card extends React.Component{
                 <div className="price">
                   <p><strong>RS {key.mrp * 0.82}</strong></p>
                 </div>
-<IncrementDecrement handleAdd={()=>this.props.handleAdd(key.mrp)} handleDelete={this.props.handleDelete}/>
+<IncrementDecrement handleAdd={()=>this.props.handleAdd(key.mrp)} handleDelete={()=>this.props.handleDelete(key.mrp)}/>
 
               </div>
 

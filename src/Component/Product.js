@@ -1,7 +1,5 @@
 
 import React from 'react';
-import getProduct from '../Constant/ConstantJson'
-import IncrementDecrement from "../Constant/IncrementDecrement";
 import Card from "./Card";
 import axios from "axios";
 import Footer from "../Constant/Footer";
@@ -18,16 +16,17 @@ class Product extends React.Component {
     }
   }
   componentDidMount() {
-// axios.get("https://drive.google.com/file/d/1xB_9KrJUMPEBZFqXxCV4lvWwNUjK3w2u/view?usp=sharing",{ headers: {'Access-Control-Allow-Origin': '*'} }).then(
-//   respons=>{
-//     console.log(respons);
-//   }
-// )
-    this.setState({product:getProduct()})
-
+axios.get( 'https://api.npoint.io/bceec8e6af0c6e91839a').then(
+  response=>{
+    console.log(response.data,'hhjh');
+    this.setState({product:response.data.data})
+  }
+)
+   // this.setState({product:getProduct()})
   }
 
   render() {
+    console.log(this.state.product,'ju')
     const handleAdd=(price)=>{
       console.log(price,'jh')
       this.setState(prevState => {
@@ -38,7 +37,7 @@ class Product extends React.Component {
       );
       this.setState(prevState => {
           return {
-            totalprice: prevState.totalprice + price
+            totalprice: prevState.totalprice + parseInt(price)
           }
         }
       );
@@ -48,12 +47,20 @@ class Product extends React.Component {
     const handleDelete=(price)=>{
       console.log('jhjhj')
       this.setState(prevState => {
-          return {
-            quantity: prevState.quantity - 1
+          if (this.state.quantity > 0) {
+            return {
+              quantity: prevState.quantity - 1
+            }
           }
         }
       );
-      this.setState({price:price+10})
+      this.setState(prevState => {
+          return {
+            totalprice: prevState.totalprice - parseInt(price)
+          }
+        }
+      );
+     // this.setState({price:price+10})
 
       //this.setState({price:mrp+10})
 
@@ -67,7 +74,7 @@ class Product extends React.Component {
           <Card product={this.state.product} handleAdd={handleAdd} handleDelete={handleDelete}/>
 
         </div>
-        <Footer quantity={this.state.quantity} price={this.state.totalprice} handleDelete={handleDelete}/>
+        <Footer quantity={this.state.quantity} price={this.state.totalprice} />
       </div>
     );
   }
