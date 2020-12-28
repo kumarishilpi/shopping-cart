@@ -26,13 +26,10 @@ class IncrementDecrement extends React.Component {
   }
   DecreaseItem = () => {
     this.setState(prevState => {
-      if(prevState.quantity > 0) {
-        return {
+      return {
           quantity: prevState.quantity - 1
         }
-      } else {
-        return null;
-      }
+
     });
   }
   ToggleClick = () => {
@@ -46,8 +43,10 @@ class IncrementDecrement extends React.Component {
       this.IncrementItem();
       this.props.handleAdd()
     }if(name==="decrement"){
-      this.DecreaseItem();
-      this.props.handleDelete()
+      if(this.state.quantity>0) {
+        this.DecreaseItem();
+        this.props.handleDelete()
+      }
     }
 
 

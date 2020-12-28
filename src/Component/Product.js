@@ -47,17 +47,16 @@ axios.get( 'https://api.npoint.io/bceec8e6af0c6e91839a').then(
     const handleDelete=(price)=>{
       console.log('jhjhj')
       this.setState(prevState => {
-          if (this.state.quantity > 0) {
             return {
               quantity: prevState.quantity - 1
             }
-          }
         }
       );
       this.setState(prevState => {
           return {
             totalprice: prevState.totalprice - parseInt(price)
           }
+
         }
       );
      // this.setState({price:price+10})
