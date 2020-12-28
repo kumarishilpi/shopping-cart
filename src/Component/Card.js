@@ -37,9 +37,9 @@ class Card extends React.Component{
                   <p>MRP {key.mrp}</p>
                 </div>
                 <div className="price">
-                  <p><strong>RS {key.mrp * 0.82}</strong></p>
+                    <p><strong>RS {(key.mrp * 0.82).toFixed(2)}</strong></p>
                 </div>
-<IncrementDecrement handleAdd={()=>this.props.handleAdd(key.mrp)} handleDelete={()=>this.props.handleDelete(key.mrp)}/>
+<IncrementDecrement handleAdd={()=>this.props.handleAdd(key.mrp * 0.82)} handleDelete={()=>this.props.handleDelete(key.mrp * 0.82)}/>
 
               </div>
 

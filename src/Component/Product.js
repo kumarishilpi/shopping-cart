@@ -41,8 +41,6 @@ axios.get( 'https://api.npoint.io/bceec8e6af0c6e91839a').then(
           }
         }
       );
-
-
     }
     const handleDelete=(price)=>{
       console.log('jhjhj')

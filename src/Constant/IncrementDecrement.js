@@ -37,6 +37,8 @@ class IncrementDecrement extends React.Component {
       show: !this.state.show
     });
   }
+
+
   handleChange = (event) => {
     const {name}=event.target
     if(name=== "increment"){
@@ -55,7 +57,7 @@ class IncrementDecrement extends React.Component {
     console.log(this.state.quantity,'+u')
     return (
       <div>
-        <Button/>
+        <Button className="button" name="increment" onClick={this.handleChange}/>
 
         <button name="increment" class="buttonincrement" onClick= {this.handleChange}>+</button>
         <input class="zerostate" value={this.state.quantity} />

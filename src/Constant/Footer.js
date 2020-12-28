@@ -13,7 +13,8 @@ class Footer extends React.Component {
         <p>Quantity: {this.props.quantity}</p><br/>
         <p>Total: {this.props.price}</p>
 </div>
-        <div className="footerdiv"> <a className="checkout" href="#shopping-cart">Checkout</a></div>
+        {this.props.quantity>0 ? <div className="footerdiv"><a className="checkout" href="#shopping-cart">Checkout</a></div>
+          : <div className="footerdiv"><a className="checkout">Checkout</a></div> }
 
       </div>
 </div>
